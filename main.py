@@ -72,17 +72,28 @@ def predict(input_data: HouseInput):
 async def predict_csv(file: UploadFile = File(...)):
 
     content = await file.read()
-    s = str(content, "utf-8")
+    s = content.decode("utf-8", errors="ignore")
 
     df = pd.read_csv(StringIO(s))
 
-    # Ensure same columns as training
+    print("Original columns:", df.columns)
+
+    # 🔧 Convert categorical → one-hot encoding
+    df = pd.get_dummies(df)
+
+    print("After encoding:", df.columns)
+
+    # 🔧 Ensure all required features exist
     for col in features:
         if col not in df.columns:
             df[col] = 0
 
+    # 🔧 Keep only model features
     df = df[features]
 
+    print("Final shape:", df.shape)
+
+    # 🔥 Prediction
     preds = model.predict(df)
 
     df["PredictedPrice"] = preds
