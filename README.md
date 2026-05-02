@@ -1,73 +1,119 @@
-# House_price_prediction
-A full-stack Machine Learning project that predicts house prices using a trained model, deployed with a modern UI and API.
+# 🏠 House Price Prediction System (Full Stack ML Project)
 
-# 🏠 House Price Prediction System
+## 🚀 Overview
 
-A full-stack Machine Learning project that predicts house prices using a trained model, deployed with a modern UI and API.
+This project is a full-stack machine learning application that predicts house prices based on property features.
 
----
+It integrates:
 
-## 🚀 Live Demo
-
-- Frontend: https://your-vercel-link.vercel.app
-- Backend API: https://your-render-link.onrender.com
-
----
-
-## 📌 Features
-
-- 🔹 Single house price prediction
-- 🔹 Bulk prediction using CSV upload
-- 🔹 Download predictions as CSV
-- 🔹 Interactive chart (Predicted vs Average Price)
-- 🔹 FastAPI backend with Swagger UI
-- 🔹 Clean and responsive Next.js frontend
+* Machine Learning model
+* Backend API
+* Interactive frontend dashboard
 
 ---
 
 ## 🧠 Tech Stack
 
 ### Backend
-- FastAPI
-- Scikit-learn
-- Pandas
-- NumPy
+
+* Python
+* FastAPI
+* Pandas, NumPy
+* Scikit-learn
 
 ### Frontend
-- Next.js
-- Axios
-- Recharts
 
-### Deployment
-- Render (Backend)
-- Vercel (Frontend)
+* Next.js (App Router)
+* Tailwind CSS
+* Recharts (Data Visualization)
 
 ---
 
-## 📊 Screenshots
+## ⚙️ Features
 
-### UI
-![UI](screenshots/ui.png)
-
-### Prediction
-![Prediction](screenshots/prediction.png)
-
-### Chart
-![Chart](screenshots/chart.png)
-
-### CSV Upload
-![CSV](screenshots/csv_upload.png)
-
-### Swagger API
-![Swagger](screenshots/swagger.png)
+* 📂 Upload CSV dataset
+* 🤖 Predict house prices using trained ML model
+* 📊 Interactive charts (Line + Bar)
+* 📋 Tabular data display
+* ⬇️ Download predictions as CSV
+* 🌙 Clean dark dashboard UI
 
 ---
 
-## ⚙️ Installation
+## 📊 Demo Workflow
 
-### Backend
+1. Upload CSV file
+2. Backend processes data
+3. Model generates predictions
+4. Results displayed in UI with charts
+5. Option to download predictions
+
+---
+
+## 🖼️ Screenshots
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Charts
+
+![Charts](screenshots/chart.png)
+
+---
+
+## 🛠️ Installation
+
+### 1. Clone repo
+
+```bash
+git clone https://github.com/yourusername/house-price-ml.git
+cd house-price-ml
+```
+
+---
+
+### 2. Backend Setup
 
 ```bash
 cd backend
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn main:app --reload
+```
+
+---
+
+### 3. Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## 🌐 API Endpoints
+
+| Endpoint       | Method | Description         |
+| -------------- | ------ | ------------------- |
+| `/predict`     | POST   | Single prediction   |
+| `/predict-csv` | POST   | Bulk CSV prediction |
+
+---
+
+## 📈 Future Improvements
+
+* Model optimization
+* Deployment vercel
+* Authentication system
+* Real-time analytics dashboard
+
+---
+
+## 👨‍💻 Author
+
+Nikhil
+Engineering Student | AI/ML Enthusiast
